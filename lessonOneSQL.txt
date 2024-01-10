@@ -1,0 +1,132 @@
+SQL: (Structured Query Language) is a programming language designed to manage data stored in relational databases.
+SQLite Relational Database Management System (RDBMS)
+
+Relational Databases: a database that organizes information into 1 or more tables.
+
+Table: a collection of data organized into rows and columns. (Also referred to as relations)
+
+Column: a set of data values of a particular type.
+
+Row: a single record in a table.
+
+Data types: all data stored in a relational database is a certain data type.
+    INTEGER: + or - whole number
+    TEXT: string
+    DATE: YYYY-MM-DD
+    REAL: decimal value
+
+statement: text that the database recognizes as a valid command. (always end in ;)
+
+Ex:
+
+CREATE TABLE table_name(
+    column_1 data_type,
+    column_2 data_type,
+    column_3 data_type
+);
+
+Clause: perform specific tasks. (also known as commands)
+    -CREATE TABLE is a clause.
+
+Parameter: list of columns, data types or valuies that are passed to a clause as an argument.
+    - column_1 data_type, column_2 data_type, and column_3 data_type are parameters.
+
+----------------------------------->
+CREATE statement: create a new table in the database.
+
+Ex:
+
+CREATE TABLE celebs (
+    id INTEGER,
+    name TEXT,
+    age INTEGER
+);
+
+----------------------------------->
+INSERT statement: inserts a new row into a table.
+
+Ex:
+
+INSERT INTO celebs (id, name, age)
+VALUES (1, 'Justin Bieber', 29);
+
+----------------------------------->
+SELECT statement: used to fetch data from a database.
+    -always return a new table called the result set.
+
+Ex:
+
+SELECT name FROM celebs;        # name specifies the column to query data from.
+
+    name
+Justin Bieber
+Beyonce Knowles
+Jeremy Lin
+Taylor Swift
+
+SELECT * FROM celebs;           # * query data from all the columns in a table.
+
+id	    name	            age
+1	    Justin Bieber	    29
+2	    Beyonce Knowles	    42
+3	    Jeremy Lin	        35
+4	    Taylor Swift	    33
+
+----------------------------------->
+ALTER TABLE statement: adds a new column to a table.
+
+EX:
+
+ALTER TABLE celebs
+ADD COLUMN twitter_handle TEXT;     # the newly created row has NULL (∅) values for its columns.
+
+id	    name	            age	    twitter_handle
+1	    Justin Bieber	    29	    ∅
+2	    Beyonce Knowles	    42      ∅
+3	    Jeremy Lin	        35      ∅
+4	    Taylor Swift	    33      ∅
+
+----------------------------------->
+UPDATE statement: edits a row in a table.
+
+EX:
+
+UPDATE celebs
+SET twitter_handle = '@taylorswift13'
+WHERE id = 4;
+
+SET: clause indicating the column to edit.
+WHERE: clause indicating the row to update with new column value.
+
+id	    name	            age	    twitter_handle
+1	    Justin Bieber	    29	    ∅
+2	    Beyonce Knowles	    42      ∅
+3	    Jeremy Lin	        35      ∅
+4	    Taylor Swift	    33      @taylorswift13
+
+----------------------------------->
+DELETE FROM statement: deletes one or more rows from a table.
+
+Ex:
+
+DELETE FROM celebs
+WHERE twitter_handle IS NULL;
+
+- This deletes all records in the table with no twitter_handle
+IS NULL: condition that returns true when the value is NULL and false otherwise.
+
+id	    name	            age	    twitter_handle
+4	    Taylor Swift	    33      @taylorswift13
+
+----------------------------------->
+Constraints: rules that add information about how a column can be used.
+
+EX:
+
+CREATE TABLE celebs (
+    id INTEGER PRIMARY KEY,                         # PRIMARY KEY: used to uniquely identify the row. (trying to insert a row with the same value will result in a constraint violation)
+    name TEXT UNIQUE,                               # UNIQUE: same as PRIMARY KEY, except a table can have many different UNIQUE columns.
+    date_of_birth TEXT NOT NULL,                    # NOT NULL: must have a value. (trying to insert a row without a value will result in a constraint violation)
+    date_of_death TEXT DEFAULT 'Not Applicable'     # DEFAULT: assumed value for an inserted row if it doesn't have a value for it.
+);
+

@@ -1,0 +1,6 @@
+What is SQLite?
+
+SQLite is a database engine that allows users to interact with a relational database.
+    - a database is stored in a single file. (trait that distinguishes from other database engines.)
+    - allows for accessibility
+
