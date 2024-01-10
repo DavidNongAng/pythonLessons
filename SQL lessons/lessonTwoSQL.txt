@@ -1,0 +1,23 @@
+What is SQLite?
+
+SQLite is a database engine that allows users to interact with a relational database.
+    - a database is stored in a single file. (trait that distinguishes from other database engines.)
+    - allows for accessibility
+    - ability to access and manipulate a database without involving a server application.
+    - used for testing, development, etc...
+
+Drawbacks:
+    - to maintain integrity of data, only one user can can write to the file at a time).
+    - does not validate data types.
+
+Ex:
+
+CREATE TABLE celebs (
+   id INTEGER,
+   name TEXT,
+   age INTEGER
+);
+
+    - SQLite will not reject values of the wrong type.
+
+AT THE END, WE LEARNED TO INSTALL SQLite onto our system. https://www.youtube.com/watch?v=dcfh5iQ_-3s

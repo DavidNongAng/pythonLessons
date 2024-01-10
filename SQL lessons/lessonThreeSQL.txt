@@ -1,0 +1,189 @@
+QUERIES
+
+Querying: retrieve information stored in a database.
+    - allows us to communicate with the database.
+
+AS: keyword that allows you to rename a column or table using an Alias.
+    - usually should be enclosed with ' '
+
+Ex:
+
+Select name AS 'nickname'
+FROM movies;
+
+nickname
+1408
+3 Men and a Baby
+A Beautiful Mind
+Air Force One
+Aladdin
+Ali Wong: Baby Cobra
+
+----------------------------------->
+DISTINCT: used to return unique values in the output.
+
+Ex:
+
+SELECT Tools FROM inventory;
+
+tools
+Hammer
+Nails
+Nails
+
+SELECT DISTINCT tools FROM inventory;
+
+tools
+Hammer
+Nails
+
+----------------------------------->
+WHERE: filters the result set to only include rows where the condition is true.
+    = equals
+    != does not equal
+    > greater than
+    < less than
+    >= greater than or equal to
+    <= less than or equal to
+Ex:
+
+SELECT * FROM movies
+WHERE imdb_rating > 5;
+
+or
+
+SELECT * FROM movies
+WHERE year > 2014;
+
+----------------------------------->
+LIKE: operator to compare similar values.
+
+Ex:
+
+SELECT *
+FROM movies
+WHERE name LIKE 'Se_en';        # the _ means you can substitute any individual character here. (Seven or Se7en).
+
+id	name	genre	year	imdb_rating
+219	Se7en	drama	1995	8.6
+220	Seven	drama	1979	6.1
+
+SELECT *
+FROM movies
+WHERE name LIKE 'A%';           #  the % matches zero or more missing characters in the pattern. (it would be movies that begin with A)
+
+SELECT *
+FROM movies
+WHERE name LIKE '%man%';        # in this case it would be names that has 'man' in the middle.
+
+id	name	        genre	year	imdb_rating
+10	Iron Man 3	    action	2013	7.3
+11	Spider-Man	    action	2002	7.3
+14	Spider-Man 2	action	2004	7.3
+18	Spider-Man 3	action	2007	6.2
+
+----------------------------------->
+IS NULL, IS NOT NULL: to test for NULL values.
+
+Ex:
+
+SELECT name
+FROM movies
+WHERE imdb_rating IS NOT NULL;      #filter all movies WITH an imdb rating
+
+SELECT name
+FROM movies
+WHERE imdb_rating IS NULL;          #filter all movies WITHOUT an imdb rating
+
+----------------------------------->
+BETWEEN: used in a WHERE clause to filter the result within a certain range.
+
+SELECT *
+FROM movies
+WHERE year BETWEEN 1990 AND 1999;       #It will begin in 1990 up to 1999 but not include 1999.
+
+SELECT *
+FROM movies
+WHERE name BETWEEN 'A' AND 'J';         #It will include 'A' up to, but not including 'J'
+
+id	name	            genre	year	imdb_rating
+128	Dark Shadows	    horror	2012	6.2
+222	Dawn of the Dead	horror	1978
+168	Elf	                romance	2003	6.9
+139	End of Days	        horror	1999	5.7
+148	Forrest Gump	    romance	1994	8.8
+123	Freddy vs. Jason	horror	2003	5.8
+145	Friday the 13th	    horror	2009	5.6
+
+----------------------------------->
+AND: combine multiple conditions where both conditions must be true.
+
+Ex:
+
+SELECT *
+FROM movies
+WHERE year BETWEEN 1990 AND 1999
+   AND genre = 'romance';           #Combines the 2 conditions (year and genre)
+
+SELECT *
+FROM movies
+WHERE year < 1985
+   AND genre = 'horror';
+
+----------------------------------->
+OR: displays a tow if any condition is true;
+
+Ex:
+
+SELECT *
+FROM movies
+WHERE year > 2014
+   OR genre = 'action';     #   combines the two condition where if any condition is true, the row is added.
+
+----------------------------------->
+ORDER BY: sort the results either alphabetically or numerically.
+    - ASC: ascending order (low to high)
+    - DESC: descending order (high to low)
+Ex:
+
+SELECT *
+FROM movies
+ORDER BY name;
+
+SELECT *
+FROM movies
+WHERE imdb_rating > 8
+ORDER BY year DESC;
+
+----------------------------------->
+LIMIT: specify the maximum number of rows the result set will have.
+
+Ex:
+
+SELECT *
+FROM movies
+LIMIT 10;               # always goes at the end of the prompt
+
+SELECT * FROM movies
+ORDER BY imdb_rating DESC
+LIMIT 3;
+
+----------------------------------->
+CASE: allows us to create different outputs (if statements)
+
+Ex:
+
+SELECT name,
+ CASE
+  WHEN imdb_rating > 8 THEN 'Fantastic'
+  WHEN imdb_rating > 6 THEN 'Poorly Received'
+  ELSE 'Avoid at All Costs'
+ END AS 'Reviews'
+FROM movies;
+
+- If the rating is above 8, then it is Fantastic.
+- If the rating is above 6, then it is Poorly Received.
+- Else, Avoid at All Costs.
+- END AS, renames the column to 'Reviews'
+
+
