@@ -1,0 +1,45 @@
+#Aggregate Functions
+
+Aggregates: calculations performed on multiple rows of a table.
+
+COUNT(): function that counts the number of non-empty values in the chosen column.
+
+Ex:
+
+SELECT COUNT(*)
+FROM table_name;
+
+----------------------------------->
+SUM(): function that returns the sum of all values in the column.
+
+Ex:
+
+SELECT SUM(downloads)
+FROM fake_apps;
+
+----------------------------------->
+MAX(): returns the highest value in the column
+MIN(): returns the lowest value in the column.
+
+Ex:
+
+SELECT MAX(downloads)
+FROM fake_apps;
+
+----------------------------------->
+AVG(): function that calculate the average value of a column.
+
+Ex:
+
+SELECT AVG(downloads)
+FROM fake_apps;
+
+----------------------------------->
+ROUND(): function that takes 2 parameters and rounds to the number of decimal places specified in the parameter.
+
+SELECT ROUND(price, 0)          # Rounds to the 0 decimal place.
+FROM fake_apps;
+
+SELECT ROUND(AVG(price), 2)     #rounds the average price to 2 decimal place.
+FROM fake_apps;
+
