@@ -43,3 +43,43 @@ FROM fake_apps;
 SELECT ROUND(AVG(price), 2)     #rounds the average price to 2 decimal place.
 FROM fake_apps;
 
+----------------------------------->
+GROUP BY: clause used to arrange identical data.
+
+Ex:
+
+SELECT year,
+    AVG(imdb_rating)
+FROM movies
+GROUP BY year
+ORDER BY year;
+
+SELECT category, SUM(downloads)
+FROM fake_apps
+GROUP BY category;
+
+SELECT ROUND(imdb_rating),
+   COUNT(name)
+FROM movies
+GROUP BY 1
+ORDER BY 1;
+
+SELECT category,
+   price,
+   AVG(downloads)
+FROM fake_apps
+GROUP BY category, price;
+
+----------------------------------->
+HAVING: similar to WHERE, where it limits the results of a query base don an aggregate property.
+    - Always comes after GROUP BY
+    - Always comes before ORDER BY and LIMIT
+
+Ex:
+
+SELECT year,
+   genre,
+   COUNT(name)
+FROM movies
+GROUP BY 1, 2
+HAVING COUNT(name) > 10;
