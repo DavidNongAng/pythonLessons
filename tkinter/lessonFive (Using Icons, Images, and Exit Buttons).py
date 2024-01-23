@@ -2,11 +2,12 @@ from tkinter import *
 from PIL import ImageTk,Image
 
 root = Tk()
-root.title("ICONS AND IMAGES")
-root.iconbitmap('tkinter/favicon.ico')
+root.title("lessonFive (Using Icons, Images, and Exit Buttons)")
+root.iconbitmap('tkinter/img/favicon.ico')
 
-
-
+my_img =  ImageTk.PhotoImage(Image.open("tkinter/cat.jpg"))
+my_label = Label(image=my_img)
+my_label.pack()
 
 
 
