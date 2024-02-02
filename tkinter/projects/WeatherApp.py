@@ -6,7 +6,7 @@ import json
 
 root = Tk()
 root.title('Weather App')
-root.iconbitmap('tkinter/img/favicon.ico')
+root.iconbitmap('tkinter/default tkinter/img/favicon.ico')
 root.geometry("600x100")
 
 #Create zipcode lookup function

@@ -4,7 +4,7 @@ import sqlite3
 
 root = Tk()
 root.title('using databases.')
-root.iconbitmap('tkinter/img/favicon.ico')
+root.iconbitmap('tkinter/default tkinter/img/favicon.ico')
 root.geometry("500x500")
 
 #Databases

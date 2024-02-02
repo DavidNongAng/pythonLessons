@@ -3,7 +3,7 @@ from PIL import ImageTk, Image
 
 root = Tk()
 root.title("lessonEight (Radio Button)")
-root.iconbitmap('tkinter/img/favicon.ico')
+root.iconbitmap('tkinter/default tkinter/img/favicon.ico')
 
 #r = IntVar()
 #r.set("2")

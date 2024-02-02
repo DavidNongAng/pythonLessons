@@ -4,7 +4,7 @@ from tkinter import messagebox
 
 root = Tk()
 root.title("lessonNine (Message Box)")
-root.iconbitmap('tkinter/img/favicon.ico')
+root.iconbitmap('tkinter/default tkinter/img/favicon.ico')
 
 #showinfo, showwarning, showerrror, askquestion, askokcancel, askyesno
 

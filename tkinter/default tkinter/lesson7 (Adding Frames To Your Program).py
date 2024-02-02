@@ -3,7 +3,7 @@ from PIL import ImageTk, Image
 
 root = Tk()
 root.title("lessonSeven (Adding Frames To Your Program)")
-root.iconbitmap('tkinter/img/favicon.ico')
+root.iconbitmap('tkinter/default tkinter/img/favicon.ico')
 
 #Craete Frame Object
 frame = LabelFrame(root, padx=50, pady=50)

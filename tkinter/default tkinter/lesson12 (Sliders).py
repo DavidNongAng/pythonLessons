@@ -3,7 +3,7 @@ from PIL import ImageTk, Image
 
 root = Tk()
 root.title('lessonTwelve (Sliders)')
-root.iconbitmap('tkinter/img/favicon.ico')
+root.iconbitmap('tkinter/default tkinter/img/favicon.ico')
 root.geometry("900x500")
 
 vertical = Scale(root, from_=0, to=200)

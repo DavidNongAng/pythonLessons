@@ -92,8 +92,8 @@ python_dark = Image.open('tkinter/img/cat2.PNG').resize((30,30))
 python_dark_tk = ImageTk.PhotoImage(python_dark)
 
 img_ctk = ctk.CTkImage(
-    light_image = Image.open('tkinter/img/cat1.jpg'),
-    dark_image = Image.open('tkinter/img/cat1.jpg'))
+    light_image = Image.open('tkinter/default tkinter/img/cat1.jpg'),
+    dark_image = Image.open('tkinter/default tkinter/img/cat1.jpg'))
 
 # widget
 # label = ttk.Label(window, text = 'raccon', image = image_tk)

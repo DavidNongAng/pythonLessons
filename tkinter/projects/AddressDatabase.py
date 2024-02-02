@@ -4,7 +4,7 @@ import sqlite3
 
 root = Tk()
 root.title('Address Database')
-root.iconbitmap('tkinter/img/favicon.ico')
+root.iconbitmap('tkinter/default tkinter/img/favicon.ico')
 root.geometry("360x500")
 
 #Databases
@@ -71,7 +71,7 @@ def edit():
     global editor
     editor = Tk()
     editor.title('Edit a Record.')
-    editor.iconbitmap('tkinter/img/favicon.ico')
+    editor.iconbitmap('tkinter/default tkinter/img/favicon.ico')
     editor.geometry("360x500")
     #Create or connect to a database.
     conn = sqlite3.connect('address_book.db')

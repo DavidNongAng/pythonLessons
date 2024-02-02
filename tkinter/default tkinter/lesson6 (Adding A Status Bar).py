@@ -3,14 +3,14 @@ from PIL import ImageTk,Image
 
 root = Tk()
 root.title("lessonSix (Adding A Status Bar)")
-root.iconbitmap('tkinter/img/favicon.ico')
+root.iconbitmap('tkinter/default tkinter/img/favicon.ico')
 
 #Initialize Image Objects
-my_img1 =  ImageTk.PhotoImage(Image.open("tkinter/img/cat1.jpg"))
-my_img2 =  ImageTk.PhotoImage(Image.open("tkinter/img/cat2.PNG"))
-my_img3 =  ImageTk.PhotoImage(Image.open("tkinter/img/cat3.jpg"))
-my_img4 =  ImageTk.PhotoImage(Image.open("tkinter/img/cat4.png"))
-my_img5 =  ImageTk.PhotoImage(Image.open("tkinter/img/cat5.png"))
+my_img1 =  ImageTk.PhotoImage(Image.open("tkinter/default tkinter/img/cat1.jpg"))
+my_img2 =  ImageTk.PhotoImage(Image.open("tkinter/default tkinter/img/cat2.PNG"))
+my_img3 =  ImageTk.PhotoImage(Image.open("tkinter/default tkinter/img/cat3.jpg"))
+my_img4 =  ImageTk.PhotoImage(Image.open("tkinter/default tkinter/img/cat4.png"))
+my_img5 =  ImageTk.PhotoImage(Image.open("tkinter/default tkinter/img/cat5.png"))
 
 #Store Images in a List
 image_list = [my_img1,my_img2,my_img3,my_img4,my_img5]

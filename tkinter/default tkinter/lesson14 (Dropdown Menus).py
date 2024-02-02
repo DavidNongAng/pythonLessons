@@ -3,7 +3,7 @@ from PIL import ImageTk, Image
 
 root = Tk()
 root.title('lessonThirteen (Checkboxes)')
-root.iconbitmap('tkinter/img/favicon.ico')
+root.iconbitmap('tkinter/default tkinter/img/favicon.ico')
 root.geometry("500x500")
 
 def show():
