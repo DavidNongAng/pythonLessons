@@ -47,7 +47,7 @@ WHERE: filters the result set to only include rows where the condition is true.
     <= less than or equal to
 Ex:
 
-SELECT * FROM movies
+SELECT * FROM movies 
 WHERE imdb_rating > 5;
 
 or

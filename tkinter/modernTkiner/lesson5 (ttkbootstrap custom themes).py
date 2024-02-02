@@ -6,7 +6,7 @@ class App(ttk.Window):
     def __init__(self, title, size):
         
         # main setup
-        super().__init__(themename = 'custom')
+        super().__init__(themename = 'custom') #using ttkcreator
         self.title(title)
         self.geometry(f'{size[0]}x{size[1]}')
         self.minsize(size[0],size[1])
